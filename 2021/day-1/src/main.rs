@@ -31,10 +31,8 @@ fn part_2() -> i32 {
         .collect();
 
     let mut increases = 0;
-    for i in 2..a.len() - 1 {
-        let w1_sum = a[i - 2] + a[i - 1] + a[i];
-        let w2_sum = a[i - 1] + a[i] + a[i + 1];
-        if w2_sum > w1_sum {
+    for i in 3..a.len() {
+        if a[i] > a[i - 3] {
             increases += 1;
         }
     }
